@@ -1,0 +1,67 @@
+.main-verificattion{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.photo-verification{
+    height: 250px;
+    width: 250px;
+}
+.photo-verification img{
+    height: 60%;
+    width: 100%;
+}
+.adhar-verification{
+    height: max-content;
+    width: 50%;
+    /* background-color: red; */
+}
+.adhar-verification img{
+    height: 60%;
+    width: 100%;
+    
+}
+.adhar-verification p{
+    margin-left: 60px;
+    font-size: 22px;
+    margin-top: 10px;
+}
+.photo-verification p{
+    font-size: 22px;
+    margin-top: 10px;
+
+}  
+.photo-verification p:hover ,.adhar-verification p:hover { 
+    text-decoration: underline;
+    color: rgb(45, 45, 189);
+}
+.submit-btn{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+.submit-btn button{
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #E11D48;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transform: all 0.7s;
+}
+.submit-btn button:hover{
+    background-color: #fff;
+    color: #E11D48;
+    cursor: pointer;
+    border: 2px solid;
+}
+.house-shape img{
+    height: 30px;
+}
+

@@ -1,0 +1,50 @@
+.entry-heading{
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    /* background: yellow; */
+    margin-top: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.entry-person{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    padding: 30px;
+    justify-content: space-evenly;
+    
+}
+.specific-person{
+    height: 200px;
+    width: 200px;
+    background-color: #f7f7f7;
+    color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow : 0.5px 0.5px 3px 0.5px  #e11d477e;
+}
+.specific-person h1{
+    background-color: #524a4a;
+    font-size: 50px;
+    height: max-content;
+    width: max-content;
+    padding: 10px;
+    border-radius:5px ;
+    
+}
+.specific-person p{
+    font-size: 23px;
+    font-weight: 500;
+   
+    color: black;
+}

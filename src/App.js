@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import './App.css'
+import Navbar from './Navbar/Navbar'
+import Entry from './Entry/Entry'
+import { BrowserRouter ,  Routes , Route } from 'react-router-dom'
+import Purpose from './Purpose/Purpose'
+import Cpurpose from './Purpose/Cpurpose'
+import House from './Purpose/House'
+import Verification from './PhotoVerify/Verification'
+import VerfiedUser from './Purpose/VerfiedUser'
+// import 'sweetalert2/src/sweetalert2.scss';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <BrowserRouter>
+    <div className='screen'> 
+    <Navbar/>
+    <Routes>'
+      <Route path= '/' element = {<Entry/>} />
+      <Route path= '/purpose' element = {<Purpose/>} />
+      <Route path= '/c-purpose' element = {<Cpurpose/>} />
+      <Route path= '/house-no' element = {<House/>} />
+      <Route path= '/photo-verification' element = {<Verification/>} />
+      <Route path= '/verified-user' element = {<VerfiedUser/>} />
+    </Routes>
     </div>
-  );
+    </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App

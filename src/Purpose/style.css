@@ -1,0 +1,37 @@
+.purpose-heading{
+    height: 20vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+.purpose-sec{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.purpose-lines{
+    height: 200px;
+    width: 200px;
+    background-color: #f7f7f7;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow : 0.5px 0.5px 3px 0.5px  #e11d4757;
+}
+/* .house-shape{
+    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
+    box-shadow : 2.5px 2.5px 3px 2.5px  #E11D48;
+} */

@@ -8,36 +8,43 @@ import { BsFillPersonFill } from "react-icons/bs";
 export const userData = [
   {
     title: "Guest",
-    icons : <BsPersonArmsUp />,
-   
+    hindiTitle: "मेहमान",
+    icons: <BsPersonArmsUp />,
   },
   {
     title: "Relative",
-    icons : <MdPerson4 />
+    hindiTitle: "रिश्तेदार",
+    icons: <MdPerson4 />
   },
   {
     title: "Friends",
-    icons : <FaHandshake />
+    hindiTitle: "दोस्त",
+    icons: <FaHandshake />
   },
   {
     title: "House Maid",
-    icons : <BsFillPersonFill />
-    
+    hindiTitle: "नौकरानी",
+    icons: <BsFillPersonFill />  
   },
   {
     title: "Construction",
+    hindiTitle: "निर्माण",
     icons: <MdOutlineConstruction/>
   },
   {
     title: "Workers",
-    icons :<BsFillPersonFill />
+    hindiTitle: "श्रमिक",
+    icons: <BsFillPersonFill />
   },
   {
     title: "Vendors",
-    icons :<BsFillPersonFill />
+    hindiTitle: "विक्रेता",
+    icons: <BsFillPersonFill />
   },
   {
     title: "Others",
-    icons : <BsFillPersonFill />
+    hindiTitle: "अन्य",
+    icons: <BsFillPersonFill />
   },
-];
+]
+

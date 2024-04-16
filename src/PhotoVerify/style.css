@@ -24,17 +24,17 @@
     width: 100%;
     
 }
-.adhar-verification p{
+.btn-container p{
     margin-left: 60px;
     font-size: 22px;
     margin-top: 10px;
 }
-.photo-verification p{
+.btn-container p{
     font-size: 22px;
     margin-top: 10px;
 
 }  
-.photo-verification p:hover ,.adhar-verification p:hover { 
+.btn-container p:hover ,.btn-container p:hover { 
     text-decoration: underline;
     color: rgb(45, 45, 189);
 }
@@ -64,4 +64,5 @@
 .house-shape img{
     height: 30px;
 }
+
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import { userData } from "../Data/data";
 import { useNavigate } from "react-router-dom";
-function Entry() {
+function Entry({language }) {
   const navigate = useNavigate();
   const indexPage = () => {
     navigate("/");
@@ -18,6 +18,7 @@ function Entry() {
     navigate('/verified-user')
   }
   const handlePurpose = (index) => {
+    localStorage.setItem("entry" , JSON.stringify(userData[index].title))
     switch (index) {
       case 0:
         return guestPage();
@@ -39,24 +40,25 @@ function Entry() {
         indexPage();
     }
   };
-
+  
+  //  const data = localStorage.setItem('data' ,)
   return (
     <>
       <div className="entry-heading">
-        <h1 className="m-font">Type of Entry</h1>
+        <h1 className="m-font"> {language==='english'? "प्रवेश का प्रकार" : "Type of Entry"  } </h1>
       </div>
       <div className="entry-person">
         {userData.map((item, index) => (
           <div onClick={() => handlePurpose(index)} className="specific-person">
             <h1>{item.icons}</h1>
             <p className="m-font" key={index}>
-              {item.title}
+         {language === 'english' ? <> {item.hindiTitle} </> : <>{item.title} </>}     
             </p>
           </div>
         ))}
       </div>
     </>
-  );
+  );  
 }
 
 export default Entry;

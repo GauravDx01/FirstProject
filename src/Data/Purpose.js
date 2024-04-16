@@ -1,43 +1,38 @@
 export const nonVerifiedPurpose = [
     {
-        purpose : "Hanging out"
+        purpose: "Hanging out",
+        hindiPurpose: "घूमने जाना"
     },
     {
-        purpose : "Having fun"
+        purpose: "Having fun",
+        hindiPurpose: "मज़े करना"
     },
     {
-        purpose : "Celebrating"
+        purpose: "Celebrating",
+        hindiPurpose: "उत्सव मनाना"
     },
     {
-        purpose : "Family stuff"
-    },
-    
-    {
-        purpose : "Helping out"
+        purpose: "Family stuff",
+        hindiPurpose: "परिवार के काम"
     },
     {
-        purpose : "Adventure"
+        purpose: "Helping out",
+        hindiPurpose: "मदद करना"
     },
-    
     {
-        purpose : "Helping out"
+        purpose: "Adventure",
+        hindiPurpose: "एडवेंचर"
     },
-    
     {
-        purpose : "Healthcare:"
+        purpose: "Healthcare",
+        hindiPurpose: "स्वास्थ्य सेवाएँ"
     },
-    
     {
-        purpose : "Religious "
+        purpose: "Religious",
+        hindiPurpose: "धार्मिक कार्य"
     },
-    
     {
-        purpose : "Shopping or dining"
+        purpose: "Shopping or dining",
+        hindiPurpose: "खरीदारी या भोजन"
     },
-    
-    
-]
-
-
-
-
+];

@@ -1,0 +1,16 @@
+.back-btn{
+    position: fixed;
+    top: 14%;
+    left: 5%;
+}
+.back-btn button{
+    border: none;
+    height: 50px;
+    width: 50px;
+    background-color:#E11D48;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+

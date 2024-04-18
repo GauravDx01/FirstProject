@@ -11,24 +11,39 @@ import { ToastContainer, toast } from 'react-toastify';
 function Verification({ language }) {
 
   const handleSubmit = async () => {
-    // Retrieve data from localStorage
+   
     const entry = JSON.parse(localStorage.getItem("entry"));
     const purpose = JSON.parse(localStorage.getItem("purpose"));
     const houseDetails = JSON.parse(localStorage.getItem("houseDetails" ));
-    console.log(houseDetails)
+    localStorage.setItem("adharImg"  , JSON.stringify(AdharImgSrc) )
+    localStorage.setItem("userImg"  , JSON.stringify(imgSrc) )
+    const adharImg = JSON.parse(localStorage.getItem("adharImg"))
+    const userImg = JSON.parse(localStorage.getItem("userImg"))
    
 
     try {
-      // Fetch data from API
+   
+      if (imgSrc === userPhoto) {
+        toast.warn("Please capture your photo before submitting");
+        return;
+      }
+ if (AdharImgSrc === adharPhoto) {
+        toast.warn('Please capture your Aadhar photo before submitting');
+        return;
+      }
+    
+
+     else{
+     
       const response = await axios.post(`${PORT}/nonVerified`, {
         entryType: entry,
         purposeType : purpose,
-        houseDetails: houseDetails
+        houseDetails: houseDetails,
+        adharImg : adharImg,
+        userPhoto : userImg
       });
-
-      // Handle response as needed
       toast.success('Data added')
-      console.log("API response:", response.data);
+     }
     } catch (error) {
       // Handle error
       console.error("Error fetching data:", error);
@@ -52,7 +67,7 @@ const retake = () => {
 
   // 
 
-  // camera  22
+  // camera  2
 
 const AdharWebcamRef = useRef(null);
 const [AdharImgSrc, AdharSetImgSrc] = useState(adharPhoto);
@@ -69,7 +84,7 @@ const AdharRetake = () => {
 };
 
 
-localStorage.setItem("photo" , JSON.stringify(imgSrc))
+
   //
   return (
     <>
@@ -92,9 +107,9 @@ localStorage.setItem("photo" , JSON.stringify(imgSrc))
       )}
  <div className="btn-container">
         {imgSrc ? (
-          <p onClick={retake}>Take a photo</p>
+          <p onClick={retake}>{language=="english" ? "फोटो लें" : "Take a photo"}</p>
         ) : (
-          <p onClick={capture}>Capture photo</p>
+          <p onClick={capture}>{language=="english" ? "फोटो किंचे" : "Click photo"}</p>
         )}
       </div>
     </div>
@@ -117,9 +132,9 @@ localStorage.setItem("photo" , JSON.stringify(imgSrc))
       )}
  <div className="btn-container">
         {AdharImgSrc ? (
-          <p onClick={AdharRetake}>Take a photo</p>
+          <p onClick={AdharRetake}>{language=="english" ? "आधार कार्ड की फोटो लें" : "Verify your Adharcard"}</p>
         ) : (
-          <p onClick={captureAdhar}>Capture photo</p>
+          <p onClick={captureAdhar}>{language=="english" ? "फोटो किंचे" : "Click photo"}</p>
         )}
       </div>
     </div>

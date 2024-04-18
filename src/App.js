@@ -11,6 +11,7 @@ import VerfiedUser from './Purpose/VerfiedUser'
 // import 'sweetalert2/src/sweetalert2.scss';
 
 import 'react-toastify/dist/ReactToastify.css';
+import GetData from './GetData/GetData'
 
 function App() {
   const [language , setLanguage] = useState('english')
@@ -30,6 +31,7 @@ function App() {
       <Route path= '/house-no' element = {<House  language={language}  />} />
       <Route path= '/photo-verification' element = {<Verification language={language}/>} />
       <Route path= '/verified-user' element = {<VerfiedUser language={language}/>} />
+      <Route path= '/get-data' element = {<GetData language={language}/>} />
     </Routes>
     </div>
     </BrowserRouter>

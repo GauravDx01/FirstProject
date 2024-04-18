@@ -7,7 +7,7 @@ function Backbutton() {
   return (
     <>
     <div  className="back-btn">
-        <button onClick={()=>navigate(-1)}><IoMdArrowRoundBack /></button>
+        <button onClick={()=>navigate(-1)}>&#10096;</button>
     </div>
     
     </>

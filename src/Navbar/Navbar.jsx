@@ -1,12 +1,13 @@
 import React from 'react'
 import './style.css'
+import { useNavigate } from 'react-router-dom'
 function Navbar({language , handleLanguageChange}) {
-  
+const navigate = useNavigate()
   return (
     <>
     <div className="nav">
-    <div className="logo">
-        <h1 className='m-font'>Sky<span>N</span>et<span>E</span>nclave</h1>
+    <div onClick={()=>navigate('/')} className="logo">
+        <h1 className='m-font'><span>S</span>ky<span>N</span>et<span>E</span>nclave</h1>
     </div>
     <div className="lang">
     <div class="switch">

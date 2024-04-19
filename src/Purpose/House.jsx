@@ -27,7 +27,7 @@ function House({ language }) {
           <div className='purpose-lines house-shape' key={index} onClick={() => handleSubmit(index)}>
             {/* <img src={housePhoto} alt="" /> */}
             <br />
-            <p>{language === 'english' ? "घर का नंबर" : " House No"} : {item.houseNo}</p>
+            <p>{language === 'english' ? "घर का नंबर" : " House No"} :{item.houseNo}</p>
             <p>{language === 'english' ? "मालिक" : "Owner"} : {item.owner}</p>
           </div>
         ))}

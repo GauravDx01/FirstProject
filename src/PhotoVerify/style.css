@@ -25,9 +25,16 @@
     
 }
 .btn-container p{
-    margin-left: 60px;
+    margin-left: 5px;
     font-size: 22px;
     margin-top: 10px;
+    width: max-content;
+}
+.btn-container-Adhar p{
+    margin-left: 50px;
+    font-size: 22px;
+    margin-top: 10px;
+    width: max-content;
 }
 .btn-container p{
     font-size: 22px;

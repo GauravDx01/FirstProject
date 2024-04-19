@@ -36,6 +36,8 @@ function Entry({language }) {
         return cPage();
       case 6:
         return cPage();
+      case 7:
+        return guestPage();
       default:
         indexPage();
     }

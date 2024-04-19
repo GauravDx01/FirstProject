@@ -66,7 +66,7 @@ function VerfiedUser({ language }) {
         {/* {filteredMaidList.length <0 } */}
         {filteredMaidList.map((item, index) => (
           <div onClick={() => handleSubmit(index)} className="purpose-lines" key={index}>
-            <p>{language === 'english' ? "नाम" : "Name"} : {item.name}</p>
+            <p>{language === 'english' ? "नाम" : "Name"} : <br /> <br /> {item.name}</p>
           </div>
         ))}
       </div>

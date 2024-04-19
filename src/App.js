@@ -8,7 +8,7 @@ import Cpurpose from './Purpose/Cpurpose'
 import House from './Purpose/House'
 import Verification from './PhotoVerify/Verification'
 import VerfiedUser from './Purpose/VerfiedUser'
-// import 'sweetalert2/src/sweetalert2.scss';
+
 
 import 'react-toastify/dist/ReactToastify.css';
 import GetData from './GetData/GetData'

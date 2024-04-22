@@ -12,6 +12,9 @@ import VerfiedUser from './Purpose/VerfiedUser'
 
 import 'react-toastify/dist/ReactToastify.css';
 import GetData from './GetData/GetData'
+import SignUp from './GetData/SignUp'
+import Login from './GetData/Login'
+import Private from './Private/Private'
 
 function App() {
   const [language , setLanguage] = useState('english')
@@ -31,7 +34,13 @@ function App() {
       <Route path= '/house-no' element = {<House  language={language}  />} />
       <Route path= '/photo-verification' element = {<Verification language={language}/>} />
       <Route path= '/verified-user' element = {<VerfiedUser language={language}/>} />
+      
+      <Route path= '/signup' element = {<SignUp language={language}/>} />
+      <Route path= '/login' element = {<Login language={language}/>} />
+      <Route element={ <Private/>} >
+
       <Route path= '/get-data' element = {<GetData language={language}/>} />
+      </Route>
     </Routes>
     </div>
     </BrowserRouter>

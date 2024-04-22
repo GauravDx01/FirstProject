@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PORT } from '../Api/api';
-import './style.css'; // Import your CSS file
-import Swal from 'sweetalert2/dist/sweetalert2.js'
+import './style.css';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Logout from './Logout';
 
 function GetData() {
   const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const perPage = 5; // Display 5 entries per page
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${PORT}/getData`);
-        setData(response.data.data); // Assuming the server returns an object with a 'data' property containing the array of data
+        const response = await axios.get(`${PORT}/getData?page=${currentPage}&perPage=${perPage}`);
+        setData(response.data.data);
+        setTotalPages(Math.ceil(response.data.data.length / perPage));
+      
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -19,11 +25,11 @@ function GetData() {
 
     fetchData();
 
-  }, []);
+  }, [currentPage, perPage]);
 
   const handleDelete = async (id) => {
-    if (!id) return; // Return early if id is falsy (null, undefined, etc.)
-  
+    if (!id) return;
+
     const result = await Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -34,20 +40,34 @@ function GetData() {
       confirmButtonText: "Yes, delete it!"
     });
   
-    if (!result.isConfirmed) return; // Return early if user cancels the deletion
-  
+    if (!result.isConfirmed) return;
+
     try {
-      const response = await axios.delete(`${PORT}/delUser/${id}`);
-      
-      // Update state to remove deleted item from the data array
+      await axios.delete(`${PORT}/delUser/${id}`);
       setData(data.filter(item => item._id !== id));
-      
-      // Show success message
       await Swal.fire("Deleted!", "Your file has been deleted.", "success");
     } catch (error) {
       console.error('Error deleting data:', error);
     }
   };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Calculate the starting index and ending index of the current page's entries
+  const startIndex = (currentPage - 1) * perPage;
+  const endIndex = Math.min(startIndex + perPage, data.length);
+  const currentPageData = data.slice(startIndex, endIndex);
+
   return (
     <div className="data-table-container">
       <h2>Data Table</h2>
@@ -63,7 +83,7 @@ function GetData() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {currentPageData.map((item, index) => (
             <tr key={index}>
               <td className="entry-type">{item.entryType}</td>
               <td className="purpose-type">{item.purposeType}</td>
@@ -81,6 +101,12 @@ function GetData() {
           ))}
         </tbody>
       </table>
+      <div className="pagination">
+        <button className='pagi' onClick={handlePrevPage} style={{ opacity: currentPage === 1 ? '0.5' : '1' }} >&#60; Previous</button>
+        <span className='pagi'> {currentPage}</span>
+        <button className='pagi' onClick={handleNextPage}  style={{ opacity: currentPage === totalPages? '0.5' : '1' }} >Next &#62;</button>
+      </div>
+      <Logout/>
     </div>
   );
 }

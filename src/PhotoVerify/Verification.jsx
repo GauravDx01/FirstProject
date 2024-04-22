@@ -76,7 +76,7 @@ function Verification({ language }) {
                 userPhoto: userImg
               });
               localStorage.clear()
-              navigate('/')
+              // navigate('/')
               
               Swal.fire("Saved!", "", "success");
             } catch (error) {

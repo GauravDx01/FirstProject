@@ -75,8 +75,16 @@ function Verification({ language }) {
                 adharImg: adharImg,
                 userPhoto: userImg
               });
-              localStorage.clear()
-              // navigate('/')
+              localStorage.removeItem("entry")
+              localStorage.removeItem("purpose")
+              localStorage.removeItem("houseDetails")
+              localStorage.removeItem("adharImg")
+              localStorage.removeItem("userImg")
+           
+              navigate('/')
+
+
+
               
               Swal.fire("Saved!", "", "success");
             } catch (error) {

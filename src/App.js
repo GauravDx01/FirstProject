@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from './Navbar/Navbar'
 import Entry from './Entry/Entry'
@@ -22,6 +22,7 @@ function App() {
     const newLanguage = language === 'english' ? 'hindi' : 'english';
     setLanguage(newLanguage)
   }
+
   return (
     <>
     <BrowserRouter>
